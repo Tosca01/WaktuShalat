@@ -28,9 +28,9 @@
 WaktuShalat mendukung 511 Kota di Indonesia. Dan untuk saat ini hanya mendukung region Indonesia saja
 
 ## Build Instructions
-WaktuShalat reverse geocoding engine menggunakan Bing Maps milik Microsoft
+WaktuShalat reverse geocoding engine menggunakan **Bing Maps milik Microsoft**
 
- 1. Pertama, Kamu perlu mendapatkan Bing Maps API Key Kamu sendiri di Bing Maps Dev Center <a href="https://www.bingmapsportal.com/">Daftar Di Sini</a><br>
+ 1. Pertama, Kamu perlu mendapatkan Bing Maps API Key kamu sendiri di Bing Maps Dev Center <a href="https://www.bingmapsportal.com/">Daftar Di Sini</a><br>
  2. Instal Visual Studio Community 2019. <a href="https://arpha01.blogspot.com/2019/09/1-visual-basic-net-tutorial-menginstall.html">Panduan Instalasi!</a><br>
  3. Di LocationController.cs dalam string key Kamu perlu mengganti ```File.ReadAllText ("key.txt")``` dengan kunci bing maps Kamu sendiri <br>
  4. Instal semua NuGet dependency menggunakan Package manager console ```nuget install packages.config``` <br>
