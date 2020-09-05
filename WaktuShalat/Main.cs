@@ -21,8 +21,6 @@ namespace WaktuShalat
         private ShalatController shalatController = new ShalatController();
         private ShalatRepository shalatRepository = new ShalatRepository();
 
-        private TimeSpan CurrentTime;
-
         public static bool tommorow = false;
         private Ayat ayat = new Ayat();
         public static Shalat waktuShalat = new Shalat();
@@ -64,10 +62,11 @@ namespace WaktuShalat
 
             if (Tommorow)
             {
-
                 WaktuShalat = (shalatRepository.CheckIfDataExists(TimeHelper.GetTommorowDateWithUSFormat())) ?
-                             await shalatController.GetJadwal(TimeHelper.GetTommorowDateWithUSFormat()) :
-                             shalatRepository.GetByDate(TimeHelper.GetTommorowDateWithUSFormat());
+                             shalatRepository.GetByDate(TimeHelper.GetTommorowDateWithUSFormat()) :
+                             await shalatController.GetJadwal(TimeHelper.GetTommorowDateWithUSFormat());
+
+                
             }
         }
 
@@ -168,7 +167,7 @@ namespace WaktuShalat
         {
             if (data.Item1 == "")
             {
-                Tommorow = true;
+                if (!Tommorow) Tommorow = true;
 
                 //parsing waktu
                 var end = timeController.BuildDate($"{TimeHelper.GetTommorowDateWithUSFormat()} {waktuShalat.subuh}");

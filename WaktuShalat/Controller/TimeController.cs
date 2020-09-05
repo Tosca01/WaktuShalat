@@ -29,7 +29,6 @@ namespace WaktuShalat.Controller
             if (ts.TotalMilliseconds > 0)
             {
                 TimeRemaining = $"({ts.ToString(@"hh\:mm\:ss")})";
-                //System.Windows.Forms.MessageBox.Show(TimeRemaining);
             }
         }
 

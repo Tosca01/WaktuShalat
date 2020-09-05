@@ -7,6 +7,7 @@ using WaktuShalat.View.UserControls;
 using WaktuShalat.Model;
 using WaktuShalat.Helper;
 using System.Net.Http;
+using System.IO;
 
 namespace WaktuShalat.Controller
 {
@@ -14,7 +15,7 @@ namespace WaktuShalat.Controller
     {
         public bool LocationDetected = false;
         private Location location;
-        private String key = "";
+        private String key = File.ReadAllText("key.txt"); /* YOUR BING MAPS API KEY HERE */
         public LocationController()
         {
             location = new Location();
